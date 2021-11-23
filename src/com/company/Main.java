@@ -141,14 +141,20 @@ public class Main extends Application {
         buttonVolume.setTranslateX(170);
         buttonVolume.setTranslateY(-275);
 
-
+        Button buttonInstructions = new Button();
+        buttonInstructions.setText("Back to Instructions");
+        buttonInstructions.setOnAction(e->{
+            window.setScene(introScene);
+        });
+        buttonInstructions.setTranslateX(60);
+        buttonInstructions.setTranslateY(-300);
 
         Label label = new Label("Room dimensions (m)");
         label.setTranslateX(10);
         label.setFont(Font.font(null,23));
         VBox mainLayout = new VBox(20);
         mainLayout.getChildren().addAll(label, lengthText,widthText,heightText, xInput, yInput,  zInput,
-                buttonArea, areaOutput, buttonWalls, wallOutput, buttonVolume, volumeOutput);
+                buttonArea, areaOutput, buttonWalls, wallOutput, buttonVolume, volumeOutput, buttonInstructions);
         mainScene = new Scene(mainLayout,250, 350);
 
 
