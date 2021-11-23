@@ -21,7 +21,7 @@ import static javafx.application.Application.launch;
 
 public class Main extends Application {
 
-    private static Stage menuStage,pStage;
+    Stage menuStage;
     Stage window;
     Scene mainScene;//declaring menu scenes
 
@@ -30,10 +30,6 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-    }
-
-    public static Stage getPrimaryStage(){
-        return pStage;
     }
 
     public static double getDoubleFromTextField(TextField textField) {
@@ -55,6 +51,25 @@ public class Main extends Application {
         window.setTitle("Menu");
         window.setOnCloseRequest(e -> closeGame());
 
+        Text lengthText = new Text();
+        lengthText.setText("Length:");
+        lengthText.setFont(Font.font(null, 23));
+        lengthText.setTextAlignment(TextAlignment.CENTER);
+        lengthText.setTranslateX(10);
+
+        Text widthText = new Text();
+        widthText.setText("Width:");
+        widthText.setFont(Font.font(null, 23));
+        widthText.setTextAlignment(TextAlignment.CENTER);
+        widthText.setTranslateX(10);
+
+        Text heightText = new Text();
+        heightText.setText("Height:");
+        heightText.setFont(Font.font(null,23));
+        heightText.setTextAlignment(TextAlignment.CENTER);
+        heightText.setTranslateX(10);
+
+
         Text tXInput = new Text();
         tXInput.setText("--");
         tXInput.setFont(Font.font(null, 23));
@@ -65,7 +80,8 @@ public class Main extends Application {
             x=getDoubleFromTextField(xInput);
             tXInput.setText(xInput.getText());
         });
-
+        xInput.setMaxWidth(50.0);
+        xInput.setTranslateX(10);
 
         Text tYInput = new Text();
         tYInput.setText("--");
@@ -78,6 +94,9 @@ public class Main extends Application {
             y=getDoubleFromTextField(yInput);
             tYInput.setText(yInput.getText());
         });
+        yInput.setMaxWidth(50.0);
+        yInput.setTranslateX(100);
+        yInput.setTranslateY(-130);
 
 
         Text tZInput = new Text();
@@ -91,6 +110,7 @@ public class Main extends Application {
             z=getDoubleFromTextField(zInput);
             tZInput.setText(zInput.getText());
         });
+        zInput.setMaxWidth(50.0);
 
         Text areaOutput = new Text();
         areaOutput.setText("--");
@@ -130,8 +150,10 @@ public class Main extends Application {
         });
 
         Label label = new Label("Room dimensions (m)");
+        label.setFont(Font.font(null,23));
         VBox layout1 = new VBox(20);
-        layout1.getChildren().addAll(label, xInput, tXInput, yInput, tYInput, zInput, tZInput, buttonArea, areaOutput, buttonWalls, wallOutput, buttonVolume, volumeOutput);
+        layout1.getChildren().addAll(label, lengthText,widthText,heightText, xInput, tXInput, yInput, tYInput, zInput, tZInput,
+                buttonArea, areaOutput, buttonWalls, wallOutput, buttonVolume, volumeOutput);
         mainScene = new Scene(layout1,400, 800);
 
 
