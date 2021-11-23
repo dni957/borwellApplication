@@ -6,4 +6,4 @@ following command:
 where you will change {path_to_javafx_lib_folder} with the path to your local javafx lib folder.
 
 To add the javafx library go to https://gluonhq.com/products/javafx/ and download the sdk coresponding to the operating system in use.
-Extract the files form the zip and place them anywhere you want (once placed you should not move them).
+Extract the files from the zip and place them anywhere you want (once placed you should not move them).
