@@ -21,7 +21,6 @@ import static javafx.application.Application.launch;
 
 public class Main extends Application {
 
-    Stage menuStage;
     Stage window;
     Scene mainScene;//declaring menu scenes
 
@@ -44,28 +43,25 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
 
-
-        menuStage = primaryStage;
-
         window = primaryStage;
         window.setTitle("Menu");
         window.setOnCloseRequest(e -> closeGame());
 
         Text lengthText = new Text();
         lengthText.setText("Length:");
-        lengthText.setFont(Font.font(null, 23));
+        lengthText.setFont(Font.font(null, 20));
         lengthText.setTextAlignment(TextAlignment.CENTER);
         lengthText.setTranslateX(10);
 
         Text widthText = new Text();
         widthText.setText("Width:");
-        widthText.setFont(Font.font(null, 23));
+        widthText.setFont(Font.font(null, 20));
         widthText.setTextAlignment(TextAlignment.CENTER);
         widthText.setTranslateX(10);
 
         Text heightText = new Text();
         heightText.setText("Height:");
-        heightText.setFont(Font.font(null,23));
+        heightText.setFont(Font.font(null,20));
         heightText.setTextAlignment(TextAlignment.CENTER);
         heightText.setTranslateX(10);
 
@@ -98,8 +94,10 @@ public class Main extends Application {
 
         Text areaOutput = new Text();
         areaOutput.setText("--");
-        areaOutput.setFont(Font.font(null,23));
+        areaOutput.setFont(Font.font(null,16));
         areaOutput.setTextAlignment(TextAlignment.CENTER);
+        areaOutput.setTranslateX(10);
+        areaOutput.setTranslateY(-110);
 
         Button buttonArea = new Button();
         buttonArea.setText("Area");
@@ -110,28 +108,38 @@ public class Main extends Application {
             System.out.println(y);
             areaOutput.setText((x*y)+"");
         });
+        buttonArea.setTranslateX(10);
+        buttonArea.setTranslateY(-100);
 
         Text wallOutput = new Text();
         wallOutput.setText("--");
-        wallOutput.setFont(Font.font(null,23));
+        wallOutput.setFont(Font.font(null,16));
         wallOutput.setTextAlignment(TextAlignment.CENTER);
+        wallOutput.setTranslateX(70);
+        wallOutput.setTranslateY(-198);
 
         Button buttonWalls = new Button();
         buttonWalls.setText("Wall surface");
         buttonWalls.setOnAction(e->{
             wallOutput.setText((2*z*x+2*z*y)+"");
         });
+        buttonWalls.setTranslateX(70);
+        buttonWalls.setTranslateY(-188);
 
         Text volumeOutput = new Text();
         volumeOutput.setText("--");
-        volumeOutput.setFont(Font.font(null,23));
+        volumeOutput.setFont(Font.font(null,16));
         volumeOutput.setTextAlignment(TextAlignment.CENTER);
+        volumeOutput.setTranslateX(170);
+        volumeOutput.setTranslateY(-285);
 
         Button buttonVolume = new Button();
         buttonVolume.setText("volume");
         buttonVolume.setOnAction(e->{
             volumeOutput.setText((x*y*z)+"");
         });
+        buttonVolume.setTranslateX(170);
+        buttonVolume.setTranslateY(-275);
 
         Label label = new Label("Room dimensions (m)");
         label.setFont(Font.font(null,23));
