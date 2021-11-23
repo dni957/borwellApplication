@@ -70,47 +70,31 @@ public class Main extends Application {
         heightText.setTranslateX(10);
 
 
-        Text tXInput = new Text();
-        tXInput.setText("--");
-        tXInput.setFont(Font.font(null, 23));
-        tXInput.setTextAlignment(TextAlignment.CENTER);
-
         TextField xInput = new TextField();
         xInput.setOnAction(e->{
             x=getDoubleFromTextField(xInput);
-            tXInput.setText(xInput.getText());
         });
         xInput.setMaxWidth(50.0);
-        xInput.setTranslateX(10);
-
-        Text tYInput = new Text();
-        tYInput.setText("--");
-        tYInput.setFont(Font.font(null,23));
-        tYInput.setTextAlignment(TextAlignment.CENTER);
+        xInput.setTranslateX(100);
+        xInput.setTranslateY(-147);
 
 
         TextField yInput = new TextField();
         yInput.setOnAction(e->{
             y=getDoubleFromTextField(yInput);
-            tYInput.setText(yInput.getText());
         });
         yInput.setMaxWidth(50.0);
         yInput.setTranslateX(100);
-        yInput.setTranslateY(-130);
-
-
-        Text tZInput = new Text();
-        tZInput.setText("--");
-        tZInput.setFont(Font.font(null, 23));
-        tZInput.setTextAlignment(TextAlignment.CENTER);
+        yInput.setTranslateY(-142);
 
 
         TextField zInput = new TextField();
         zInput.setOnAction(e->{
             z=getDoubleFromTextField(zInput);
-            tZInput.setText(zInput.getText());
         });
         zInput.setMaxWidth(50.0);
+        zInput.setTranslateX(100);
+        zInput.setTranslateY(-136);
 
         Text areaOutput = new Text();
         areaOutput.setText("--");
@@ -152,7 +136,7 @@ public class Main extends Application {
         Label label = new Label("Room dimensions (m)");
         label.setFont(Font.font(null,23));
         VBox layout1 = new VBox(20);
-        layout1.getChildren().addAll(label, lengthText,widthText,heightText, xInput, tXInput, yInput, tYInput, zInput, tZInput,
+        layout1.getChildren().addAll(label, lengthText,widthText,heightText, xInput, yInput,  zInput,
                 buttonArea, areaOutput, buttonWalls, wallOutput, buttonVolume, volumeOutput);
         mainScene = new Scene(layout1,400, 800);
 
